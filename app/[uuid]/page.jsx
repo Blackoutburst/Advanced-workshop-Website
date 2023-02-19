@@ -37,13 +37,10 @@ export default async function User({params}) {
 
 async function getUser(uuid) {
     let user
-    
-    try {
-        const data = await fetch(`${process.env.HOST}user?token=${process.env.TOKEN}&uuid=${uuid}`)
-        user = await data.json()
-        user.uuid = uuid;
-    } catch {}
-    await new Promise(r => setTimeout(r, 2000));
+
+    const data = await fetch(`${process.env.HOST}user?token=${process.env.TOKEN}&uuid=${uuid}`)
+    user = await data.json()
+    user.uuid = uuid;
   
     return user
 }
