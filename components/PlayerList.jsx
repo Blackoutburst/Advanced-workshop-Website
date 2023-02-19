@@ -27,7 +27,8 @@ const PlayerList = ({ users }) => {
     return (
         <>
             <div className="h-32 lg:h-40">
-                <div className={`backdrop-blur-sm z-40 fixed flex justify-center items-center flex-col w-full bg-[#202020aa] duration-200 h-24 lg:h-32 border-[#404040] ${scrollY !== 0 && 'border-b-2 shadow-lg rounded-b-xl'}`}>
+                <div className={`backdrop-blur-sm z-40 fixed flex justify-center items-center flex-col w-full bg-[#202020aa] duration-200 h-24 lg:h-32 border-[#404040] space-y-2 ${scrollY !== 0 && 'border-b-2 shadow-lg rounded-b-xl'}`}>
+                    <a href='/leaderboards'><p className="text-white">Click here to check leaderboards</p></a>
                     <input className="blur-none outline-none lg:text-xl w-[90%] lg:w-2/3 bg-[#404040] rounded-lg p-4 text-gray-200" 
                         placeholder="Search player" 
                         type="text" 
