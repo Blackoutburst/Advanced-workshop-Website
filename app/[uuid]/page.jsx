@@ -1,5 +1,6 @@
 import MapStats from "@/components/MapStats"
 import PlayerRender from "@/components/PlayerRender"
+import { formatNumber } from "@/libs/number"
 
 export default async function User({params}) {
     const user = await getUser(params.uuid)
@@ -13,8 +14,18 @@ export default async function User({params}) {
                 </div>
                 <p className="text-xl text-white">Back</p>
             </a>
-            <div className="flex flex-col items-center space-y-10">
+            <div className="flex justify-center space-x-5">
                 <PlayerRender user={user} />
+                <div className="flex self-center flex-col">
+                    <div className="flex space-x-2 text-2xl">
+                        <p className="text-amber-500">Games played:</p> 
+                        <p className="text-white">{formatNumber(user?.gameCount)}</p> 
+                    </div>
+                    <div className="flex space-x-2 text-2xl">
+                        <p className="text-amber-500">Rounds played:</p> 
+                        <p className="text-white">{formatNumber(user?.roundCount)}</p> 
+                    </div>
+                </div>
             </div>
             <div className="flex flex-wrap gap-10 justify-center p-10">
                 {user?.maps?.map(map =>

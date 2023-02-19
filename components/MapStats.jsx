@@ -1,4 +1,5 @@
 'use client'
+import { formatNumber } from "@/libs/number"
 import { useState } from "react"
 
 const MapStats = ({map}) => {
@@ -14,15 +15,35 @@ const MapStats = ({map}) => {
             <p className='text-amber-300 text-base mb-3'>Overall stats</p>
             <div className="flex space-x-2 text-xl">
                 <p className="text-amber-500">Games played:</p> 
-                <p className="text-white">{map.gameCount}</p> 
+                <p className="text-white">{formatNumber(map.gameCount)}</p> 
             </div>
             <div className="flex space-x-2 text-xl">
                 <p className="text-amber-500">Rounds played:</p> 
-                <p className="text-white">{map.roundCount}</p> 
+                <p className="text-white">{formatNumber(map.roundCount)}</p> 
             </div>
             <div className="flex space-x-2 text-xl">
                 <p className="text-amber-500">Best time:</p> 
                 <p className="text-white">{map.time}s</p> 
+            </div>
+            <div className="flex space-x-2 text-xl">
+                <p className="text-amber-500">1m crafts:</p> 
+                <p className="text-white">{formatNumber(map.m1crafts)}</p> 
+            </div>
+            <div className="flex space-x-2 text-xl">
+                <p className="text-amber-500">90s crafts:</p> 
+                <p className="text-white">{formatNumber(map.s90crafts)}</p> 
+            </div>
+            <div className="flex space-x-2 text-xl">
+                <p className="text-amber-500">2m crafts:</p> 
+                <p className="text-white">{formatNumber(map.m2crafts)}</p> 
+            </div>
+            <div className="flex space-x-2 text-xl">
+                <p className="text-amber-500">5m crafts:</p> 
+                <p className="text-white">{formatNumber(map.m5crafts)}</p> 
+            </div>
+            <div className="flex space-x-2 text-xl">
+                <p className="text-amber-500">All crafts:</p> 
+                <p className="text-white">{map.allCrafts}s</p> 
             </div>
             {!open && <p className='text-white text-base mt-3'>(Click to reaveal crafts)</p>}
             {open &&
