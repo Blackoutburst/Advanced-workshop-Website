@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react"
 import { List } from "react-virtualized"
 
 const LeaderboardList = ({ lb, headerHeight }) => {
-    const list = lb?.filter(player => player.value != 0).sort((a,b) => Number.isInteger(a.value) ? (b.value > a.value) ? 1 : ((a.value > b.value) ? -1 : 0) : (a.value > b.value) ? 1 : ((b.value > a.value) ? -1 : 0))
+    const list = lb?.filter(player => player.value != 0).sort((a,b) => Number.isInteger(a.value) ? (b.value > a.value) ? 1 : ((a.value > b.value) ? -1 : 0) : (parseFloat(a.value) > parseFloat(b.value)) ? 1 : ((parseFloat(b.value) > parseFloat(a.value)) ? -1 : 0))
 
     const [windowSize, setWindowSize] = useState({width: 0, height: 0})
     const [listWidth, setListWidth] = useState(0)

@@ -34,7 +34,7 @@ const Leaderboard = ({ leaderboard, type }) => {
                     id="header2"
                     className='cursor-pointer backdrop-blur-sm z-40 fixed flex justify-center items-center flex-col w-full bg-[#202020aa] duration-200 border-[#404040]'
                 >
-                    <p className={`duration-200 text-xl lg:text-3xl text-amber-300`}>{type}</p>
+                    <p className={`duration-200 text-xl lg:text-3xl text-amber-300`}>{type.replace("%20", " ")}</p>
                     <p className='duration-200 text-sm lg:text-lg text-white'>
                         (Click to change)</p>
                 </div>
