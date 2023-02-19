@@ -1,7 +1,7 @@
 export default async function User() {
 
     return (
-        <div className="flex flex-col space-y-10">
+        <div className="flex flex-col space-y-10 mt-20 lg:mt-0">
         <div className="flex justify-center">
             <div className="w-64 h-96 bg-neutral-600 rounded-lg p-4 animate-pulse"/>
         </div>

@@ -4,17 +4,16 @@ import { formatNumber } from "@/libs/number"
 
 export default async function User({params}) {
     const user = await getUser(params.uuid)
-    console.log(user)
 
     return (
-        <div className="flex flex-col space-y-10">
+        <div className="flex flex-col space-y-10 mt-20 lg:mt-0">
             <a href="/" className="absolute flex justify-center items-center top-5 left-5 space-x-2">
                 <div className="relative w-10 h-10">
                     <img src='/images/favicon.png' />
                 </div>
                 <p className="text-xl text-white">Back</p>
             </a>
-            <div className="flex justify-center space-x-5">
+            <div className="flex flex-col lg:flex-row items-center lg:items-start justify-start lg:justify-center gap-y-10 lg:gap-y-0 lg:space-x-5">
                 <PlayerRender user={user} />
                 <div className="flex self-center flex-col">
                     <div className="flex space-x-2 text-2xl">
