@@ -7,7 +7,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head />
         <body className='bg-[#202020] scrollbar overflow-x-hidden'>
-            <div className='w-screen h-full mb-16 lg:mb-0 lg:mt-20'>
+            <div className='w-screen h-full'>
                 {children}
             </div>
             <AnalyticsWrapper />
