@@ -17,7 +17,7 @@ export default async function User({params}) {
                 <PlayerRender user={user} />
             </div>
             <div className="flex flex-wrap gap-10 justify-center p-10">
-                {user.maps.map(map =>
+                {user?.maps?.map(map =>
                     <MapStats map={map} />    
                 )}
             </div>

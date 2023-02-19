@@ -37,7 +37,7 @@ const PlayerList = ({ users }) => {
                 </div>
             </div>
             <div className="flex flex-row flex-wrap max-w-screen justify-evenly gap-5 mx-5 lg:gap-10 lg:mx-20 mb-20">
-                {list.map(user => (
+                {list?.map(user => (
                     <a key={user.uuid} href={`/${user.uuid}`}>
                         <div className="data-button">
                             <p className='text-base lg:text-xl text-transparent bg-clip-text bg-gradient-to-r text-amber-500'>{user?.name}</p>

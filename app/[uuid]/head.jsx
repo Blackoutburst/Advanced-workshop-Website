@@ -11,12 +11,10 @@ export default async function Head({params}) {
 }
 
 async function getUser(uuid) {
-    const data = await fetch(`${process.env.HOST}user?token=${process.env.TOKEN}&uuid=${uuid}`)
-    let user
-    
     try {
+        const data = await fetch(`${process.env.HOST}user?token=${process.env.TOKEN}&uuid=${uuid}`)
+        let user
         user = await data.json()
+        return user
     } catch {}
-  
-    return user
 }
