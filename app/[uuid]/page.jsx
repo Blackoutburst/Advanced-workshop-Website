@@ -1,7 +1,9 @@
+import MapStats from "@/components/MapStats"
 import PlayerRender from "@/components/PlayerRender"
 
 export default async function User({params}) {
     const user = await getUser(params.uuid)
+    console.log(user)
 
     return (
         <div className="flex flex-col space-y-10">
@@ -11,11 +13,14 @@ export default async function User({params}) {
                 </div>
                 <p className="text-xl text-white">Back</p>
             </a>
-            <div>
-                <div className="flex flex-row flex-wrap max-w-screen mx-10 lg:mx-20 justify-evenly mt-10 lg:mt-20 gap-10 lg:mb-0">
-                    <PlayerRender user={user} />
-                </div>
+            <div className="flex flex-col items-center space-y-10">
+                <PlayerRender user={user} />
             </div>
+                <div className="flex flex-wrap gap-10 justify-center p-10">
+                    {user.maps.map(map =>
+                        <MapStats map={map} />    
+                    )}
+                </div>
         </div>
     )
 }
