@@ -49,7 +49,7 @@ const MapStats = ({map}) => {
             {open &&
                 <>
                     <p className={`text-amber-300 text-base ${open && 'my-3'}`}>Crafts stats</p>
-                    {map.crafts.map(craft =>
+                    {map.crafts.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)).map(craft =>
                         <div className="flex space-x-2 text-xl">
                             <p className="text-amber-500">{craft.name}:</p> 
                             <p className="text-white">{craft.time}s</p> 
