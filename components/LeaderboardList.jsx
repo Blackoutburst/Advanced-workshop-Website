@@ -59,7 +59,7 @@ const LeaderboardList = ({ lb, headerHeight }) => {
                 height={windowSize.height - headerHeight}
                 rowHeight={rowHeight}
                 rowRenderer={renderRow}
-                rowCount={list.length} 
+                rowCount={list?.length} 
             />
         </div>
     )
