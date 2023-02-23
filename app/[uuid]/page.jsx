@@ -39,7 +39,7 @@ async function getUser(uuid) {
     let user
 
     try {
-        const data = await fetch(`${process.env.HOST}user?token=${process.env.TOKEN}&uuid=${uuid}`, { cache: 'no-store' })
+        const data = await fetch(`${process.env.HOST}user?token=${process.env.TOKEN}&uuid=${uuid}`, { cache: 'no-cache' })
         user = await data.json()
         user.uuid = uuid;
     } catch {}
