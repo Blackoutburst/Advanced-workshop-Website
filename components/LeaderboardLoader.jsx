@@ -17,5 +17,5 @@ async function getLeaderboard(type) {
         lbs = await data.json()
     } catch {}
 
-    return lbs.players
+    return lbs?.players
 }
