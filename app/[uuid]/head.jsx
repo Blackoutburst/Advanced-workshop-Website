@@ -4,7 +4,7 @@ export default async function Head({params}) {
         <>
             <title>{`Workshop - ${user?.name}`}</title>
             <meta content="width=device-width, initial-scale=1" name="viewport" />
-            <meta name="description" content={`Look at ${user?.name} Hole in the Wall stats!`} />
+            <meta name="description" content={`Look at ${user?.name} Workshop stats!`} />
             <link rel="icon" href="/images/favicon.png" />
         </>
     )
