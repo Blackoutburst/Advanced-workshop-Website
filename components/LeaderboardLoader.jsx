@@ -13,7 +13,7 @@ export default LeaderboardLoader
 async function getLeaderboard(type) {
     let lbs
     try {
-        const data = await fetch(`${process.env.HOST}leaderboard?token=${process.env.TOKEN}&type=${type}&time=${Date.now()}`, { cache: 'no-cache' })
+        const data = await fetch(`${process.env.HOST}leaderboard?token=${process.env.TOKEN}&type=${type}`, { next: { revalidate: 10 } })
         lbs = await data.json()
     } catch {}
 
