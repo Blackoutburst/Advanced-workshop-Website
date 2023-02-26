@@ -14,7 +14,7 @@ async function getLeaderboards() {
     let lbs
     
     try {
-        const data = await fetch(`${process.env.HOST}leaderboards?token=${process.env.TOKEN}`, { cache: 'no-cache' })
+        const data = await fetch(`${process.env.HOST}leaderboards?token=${process.env.TOKEN}&time=${Date.now()}`, { cache: 'no-cache' })
         lbs = await data.json()
     } catch {}
         return lbs?.leaderboards.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0))

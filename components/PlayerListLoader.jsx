@@ -14,7 +14,7 @@ async function getUsers() {
     let users
     
     try {
-        const data = await fetch(`${process.env.HOST}users?token=${process.env.TOKEN}`, { cache: 'no-cache' })
+        const data = await fetch(`${process.env.HOST}users?token=${process.env.TOKEN}&time=${Date.now()}`, { cache: 'no-cache' })
         users = await data.json()
     } catch {}
   

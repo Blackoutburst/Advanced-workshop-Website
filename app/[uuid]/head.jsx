@@ -12,7 +12,7 @@ export default async function Head({params}) {
 
 async function getUser(uuid) {
     try {
-        const data = await fetch(`${process.env.HOST}user?token=${process.env.TOKEN}&uuid=${uuid}`)
+        const data = await fetch(`${process.env.HOST}user?token=${process.env.TOKEN}&uuid=${uuid}&time=${Date.now()}`, { cache: 'no-cache' })
         let user
         user = await data.json()
         return user
