@@ -26,6 +26,14 @@ const MapStats = ({map}) => {
                 <p className="text-white">{map.time}s</p> 
             </div>
             <div className="flex space-x-2 text-xl">
+                <p className="text-amber-500">10s crafts:</p> 
+                <p className="text-white">{formatNumber(map.time10)}</p> 
+            </div>
+            <div className="flex space-x-2 text-xl">
+                <p className="text-amber-500">15s crafts:</p> 
+                <p className="text-white">{formatNumber(map.time15)}</p> 
+            </div>
+            <div className="flex space-x-2 text-xl">
                 <p className="text-amber-500">1m crafts:</p> 
                 <p className="text-white">{formatNumber(map.m1crafts)}</p> 
             </div>
@@ -52,14 +60,6 @@ const MapStats = ({map}) => {
             <div className="flex space-x-2 text-xl">
                 <p className="text-amber-500">HS time all:</p> 
                 <p className="text-white">{map.HStimeAll}s</p> 
-            </div>
-            <div className="flex space-x-2 text-xl">
-                <p className="text-amber-500">10s crafts:</p> 
-                <p className="text-white">{formatNumber(map.time10)}</p> 
-            </div>
-            <div className="flex space-x-2 text-xl">
-                <p className="text-amber-500">15s crafts:</p> 
-                <p className="text-white">{formatNumber(map.time15)}</p> 
             </div>
 
             {!open && <p className='text-white text-base mt-3'>(Click to reaveal crafts)</p>}
